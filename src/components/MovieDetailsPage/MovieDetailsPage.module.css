@@ -1,0 +1,61 @@
+.button {
+  margin-bottom: 20px;
+}
+
+/* .detailMovie {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.filmInfo {
+  display: flex;
+  padding: 15px;
+  /* margin-bottom: 20px; */
+  border-bottom: 1px solid #000;
+}
+
+.poster {
+  margin-right: 40px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.score {
+  margin-bottom: 20px;
+}
+
+.overview,
+.genres {
+  margin-bottom: 20px;
+}
+
+.genresList {
+  display: flex;
+}
+
+.genreItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+.addition {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+}
+
+.additionTitle {
+  margin-bottom: 15px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 5px;
+}
+
+.activeLink {
+  color: #2196f3;
+}

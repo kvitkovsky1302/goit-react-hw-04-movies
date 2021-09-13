@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import * as MoviesApi from '../../services/movies-api';
 import styles from './Reviews.module.css';
 
@@ -14,10 +15,10 @@ export default function Reviews({ movieId }) {
       {movieReviews?.length > 0 ? (
         <>
           <h2>Review</h2>
-          <ul>
+          <ul className={styles.reviewsList}>
             {movieReviews.map(({ id, content, author }) => (
               <li key={id}>
-                <h3>{author}</h3>
+                <h3 className={styles.author}>{author}</h3>
                 <p>{content}</p>
               </li>
             ))}
@@ -29,3 +30,7 @@ export default function Reviews({ movieId }) {
     </>
   );
 }
+
+Reviews.propTypes = {
+  movieId: PropTypes.string.isRequired,
+};

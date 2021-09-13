@@ -1,0 +1,17 @@
+.searchForm {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.searchFormInput {
+  margin-right: 20px;
+  width: 300px;
+  height: 30px;
+}
+
+.searchFormButton {
+  width: 150px;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+}

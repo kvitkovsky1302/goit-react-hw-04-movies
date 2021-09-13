@@ -1,31 +1,45 @@
+import { lazy, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import Container from './components/Container/Container';
 import AppBar from './components/AppBar/AppBar';
-import HomePage from './components/HomePage/HomePage';
-import MoviesPage from './components/MoviesPage/MoviesPage';
-import MovieDetailsPage from './components/MovieDetailsPage/MovieDetailsPage';
+
+const HomePage = lazy(() =>
+  import('./components/HomePage/HomePage' /* webpackChunkName: "HomePage" */),
+);
+const MoviesPage = lazy(() =>
+  import(
+    './components/MoviesPage/MoviesPage' /* webpackChunkName: "MoviesPage" */
+  ),
+);
+const MovieDetailsPage = lazy(() =>
+  import(
+    './components/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "MovieDetailsPage" */
+  ),
+);
 
 function App() {
   return (
     <Container>
       <AppBar />
 
-      <Switch>
-        <Route path="/" exact>
-          <HomePage />
-        </Route>
+      <Suspense fallback={<p>Downloading...</p>}>
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
 
-        <Route path="/movies" exact>
-          <MoviesPage />
-        </Route>
+          <Route path="/movies" exact>
+            <MoviesPage />
+          </Route>
 
-        <Route path="/movies/:movieId">
-          <MovieDetailsPage />
-        </Route>
+          <Route path="/movies/:movieId">
+            <MovieDetailsPage />
+          </Route>
 
-        <Redirect to="/" />
-      </Switch>
+          <Redirect to="/" />
+        </Switch>
+      </Suspense>
     </Container>
   );
 }

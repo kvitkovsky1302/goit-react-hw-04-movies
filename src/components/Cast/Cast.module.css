@@ -1,0 +1,25 @@
+.title {
+  margin-bottom: 20px;
+}
+
+.actorsList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px;
+}
+
+.actorItem {
+  width: 100px;
+}
+
+.actorItem:not(:last-child) {
+  margin: 8px;
+}
+
+.img {
+  margin-bottom: 10px;
+}
+
+.name {
+  margin-bottom: 5px;
+}

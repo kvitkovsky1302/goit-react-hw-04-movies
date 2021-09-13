@@ -25,9 +25,9 @@ export default function SearchMovies({ onSubmit }) {
   };
 
   return (
-    <form className={styles.SearchForm} onSubmit={handleSubmit}>
+    <form className={styles.searchForm} onSubmit={handleSubmit}>
       <input
-        className={styles.SearchFormInput}
+        className={styles.searchFormInput}
         type="text"
         autoComplete="off"
         autoFocus
@@ -35,8 +35,8 @@ export default function SearchMovies({ onSubmit }) {
         value={searchQuery}
         placeholder="Search movies"
       />
-      <button type="submit" className={styles.SearchFormButton}>
-        <span className={styles.SearchFormButtonLabel}>Search</span>
+      <button type="submit" className={styles.searchFormButton}>
+        Search
       </button>
     </form>
   );

@@ -1,0 +1,7 @@
+.fimsList {
+  padding: 15px;
+}
+
+.filmItem:not(:last-child) {
+  margin-bottom: 10px;
+}

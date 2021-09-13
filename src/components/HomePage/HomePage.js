@@ -5,7 +5,6 @@ import styles from './HomePage.module.css';
 
 export default function HomePage() {
   const [trendingFilms, setTrendingFilms] = useState(null);
-  console.log('trendingFilms', trendingFilms);
 
   useEffect(() => {
     MoviesApi.fetchTrandingFilms().then(setTrendingFilms);
@@ -15,9 +14,9 @@ export default function HomePage() {
     <>
       <h1>Trending today</h1>
       {trendingFilms && (
-        <ul>
+        <ul className={styles.fimsList}>
           {trendingFilms.map(film => (
-            <li key={film.id}>
+            <li key={film.id} className={styles.filmItem}>
               <Link to={`/movies/${film.id}`}>
                 {film.title ? film.title : film.name}
               </Link>

@@ -7,15 +7,15 @@ import * as MoviesApi from '../../services/movies-api';
 export default function MoviesPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [imagePage, setImagePage] = useState([]);
-  const location = useLocation().search.split('=')[1];
+  const locationQuery = useLocation().search.split('=')[1];
 
   useEffect(() => {
-    if (searchQuery || location) {
+    if (searchQuery || locationQuery) {
       return MoviesApi.fetchFilmKeyWord(
-        searchQuery ? searchQuery : location,
+        searchQuery ? searchQuery : locationQuery,
       ).then(setImagePage);
     }
-  }, [location, searchQuery]);
+  }, [locationQuery, searchQuery]);
 
   const formSubmitHandler = value => {
     setImagePage([]);
